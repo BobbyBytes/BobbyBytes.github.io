@@ -12,4 +12,4 @@ function clearBatch(e){
 
 batchButtons.innerHTML = '';
 
-batchButtons.innerHTML = '<div class = well>' + '<h6>Batch Left:' + batchSize + '</h6>' + '</div>';
+batchButtons.innerHTML = '<div class = "well">' + '<h6>Batch Left:' + batchSize + '</h6>' + '</div>';
