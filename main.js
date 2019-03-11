@@ -12,6 +12,7 @@ function saveBatch(e){
         localBS = batchSize;
         localStorage.setItem('localBS', batchSize);
     }
+displayLeft();
 }
 
 
@@ -20,6 +21,7 @@ function clearBatch(e){
 }
 
 function displayLeft(e){
+    batchSize = localStorage.getItem('localBS');
     tester.innerHTML += '<div class="well">' + '<h6>Batch Left:' + batchSize + '</h6>' + '</div>';
 }
 
