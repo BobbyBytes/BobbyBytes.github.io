@@ -10,6 +10,7 @@ function saveBatch(e){
         localStorage.setItem('localBS', batchSize);
     }
 displayLeft();
+e.preventdefault();
 }
 
 
