@@ -1,10 +1,9 @@
 document.getElementById('batchInputForm').addEventListener('submit', saveBatch);
 document.getElementById('batchInputForm').addEventListener('clear', clearBatch);
 var tester = document.getElementById('temp');
-var batchSize;
+var batchSize = document.getElementById('batchSizeInput').value;
 function saveBatch(e){
     batchSize = document.getElementById('batchSizeInput').nodeValue;
-    tester.innerHTML += '<div class="well">' + '<h6>Batch Left:' + batchSize + '</h6>' + '</div>';
     getTotals();
     while(batchSize != x){
         displayLeft();
