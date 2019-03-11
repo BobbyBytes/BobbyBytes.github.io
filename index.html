@@ -8,27 +8,26 @@
     <body>
         <div class="container">
             <h1> Bobby's Web Apps <small>by: Robert Liani</small></h1>
-        </div>
-        <div class="jumbotron">
-            <h3>Cheesecake Crust Prepper</h3>
-            <form id="batchInputForm">
-                 <div class="form_group">
-                        <label for="batchSizeInput">Batch Size</label>
-                        <select id="batchSizeInput" class="form-control">
-                            <option value=12>12lb</option>
-                            <option value=18>18lb</option>
-                            <option value=24>24lb</option>
-                        </select>
+                <div class="jumbotron">
+                    <h3>Cheesecake Crust Prepper</h3>
+                    <form id="batchInputForm">
+                        <div class="form_group">
+                            <label for="batchSizeInput">Batch Size</label>
+                            <select id="batchSizeInput" class="form-control">
+                                    <option value=12>12lb</option>
+                                    <option value=18>18lb</option>
+                                    <option value=24>24lb</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Select</button>
+                        <button type="clear" class="btn btn-primary">Clear</button>
+                    </form>    
                 </div>
-                <button type="submit" class="btn btn-primary">Select</button>
-                <button type="clear" class="btn btn-primary">Clear</button>
-
-            </form>
-            <div class="col-lg-12">
-                <div id="temp">
-                    
+                <div class="col-lg-12">
+                        <div id="temp">
+                            
+                        </div>
                 </div>
-            </div>
         </div>
         <script src="main.js"></script>
         <script src="https://chancejs.com/chance.min.js"></script>
