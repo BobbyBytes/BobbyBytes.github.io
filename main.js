@@ -5,14 +5,22 @@ var batchSize;
 function saveBatch(e){
     batchSize = document.getElementById('batchSizeInput').nodeValue;
     tester.innerHTML += '<div class="well">' + '<h6>Batch Left:' + batchSize + '</h6>' + '</div>';
-
-    displayLeft();
+    getTotals();
+    while(batchSize != x){
+        displayLeft();
+    }
+    document.getElementById('batchInputForm').reset();   
+    
 }
 
 function clearBatch(e){
-    batchSize = 0;
+    batchSize = x;
 }
 
 function displayLeft(e){
     tester.innerHTML += '<div class="well">' + '<h6>Batch Left:' + batchSize + '</h6>' + '</div>';
+}
+
+function getTotals(e){
+
 }
