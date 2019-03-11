@@ -5,9 +5,10 @@ var batchSize;
 batchButtons.innerHTML = '';
 function saveBatch(e){
     batchSize = document.getElementById('batchSizeInput').nodeValue;
-    batchButtons.innerHTML = '<div class = "well">' + '<h6>Batch Left:' + batchSize + '</h6>' + '</div>';
 }
 
 function clearBatch(e){
     batchSize = 0;
 }
+var tester = document.getElementById('temp').innerHTML;
+tester += '<div class = "well">' + '<h6>Batch Left:' + batchSize + '</h6>' + '</div>';
