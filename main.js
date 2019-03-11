@@ -2,14 +2,18 @@ document.getElementById('batchInputForm').addEventListener('submit', saveBatch);
 document.getElementById('batchInputForm').addEventListener('clear', clearBatch);
 var tester = document.getElementById('temp');
 function saveBatch(e){
-    var batchSize = document.getElementById('batchSizeInput').Value;
-    getTotals();
-    while(batchSize != x){
-        displayLeft();
+    var batchSize = document.getElementById('batchSizeInput').value;
+    if (localStorage.getItem('localBS') == null){
+        var localBS = batchSize;
+        localStorage.setItem("localBS", batchSize);
     }
-    document.getElementById('batchInputForm').reset();   
-    
+    else {
+        var localBS = localStorage.getItem('localBS');
+        localBS = batchSize;
+        localStorage.setItem('localBS', batchSize);
+    }
 }
+
 
 function clearBatch(e){
     batchSize = x;
