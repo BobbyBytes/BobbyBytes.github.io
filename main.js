@@ -1,11 +1,11 @@
 document.getElementById('batchInputForm').addEventListener('submit', saveBatch);
 document.getElementById('batchInputForm').addEventListener('clear', clearBatch);
-var tester = document.getElementById('temp').innerHTML;
+var tester = document.getElementById('temp');
 var batchSize;
 batchButtons.innerHTML = '';
 function saveBatch(e){
     batchSize = document.getElementById('batchSizeInput').nodeValue;
-    tester += '<div class = "well">' + '<h6>Batch Left:' + batchSize + '</h6>' + '</div>';
+    tester.innerHTML += '<div class = "well">' + '<h6>Batch Left:' + batchSize + '</h6>' + '</div>';
 
 }
 
