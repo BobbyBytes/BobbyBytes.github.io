@@ -5,11 +5,13 @@ var batchSize;
 batchButtons.innerHTML = '';
 function saveBatch(e){
     batchSize = document.getElementById('batchSizeInput').nodeValue;
-    
+    displayLeft();
 }
 
 function clearBatch(e){
     batchSize = 0;
 }
 
-tester.innerHTML += '<div class = "well">' + '<h6>Batch Left:' + batchSize + '</h6>' + '</div>';
+function displayLeft(e){
+    tester.innerHTML += '<div class = "well">' + '<h6>Batch Left:' + batchSize + '</h6>' + '</div>';
+}
