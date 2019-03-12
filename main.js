@@ -15,8 +15,11 @@ e.preventDefault();
 
 
 function clearBatch(e){
+    var tester = document.getElementById('temp');
     batchSize = 0;
     tester.innerHTML = '';
+    e.preventDefault();
+
 }
 
 function displayLeft(e){
