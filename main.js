@@ -1,5 +1,5 @@
 document.getElementById('batchInputForm').addEventListener('submit', saveBatch);
-document.getElementById('batchInputForm').addEventListener('clear', clearBatch);
+document.getElementById('clear').addEventListener('clear', clearBatch);
 
 function saveBatch(e){
     var batchSize = document.getElementById('batchSizeInput').value;
@@ -25,7 +25,7 @@ function clearBatch(e){
 function displayLeft(e){
     var tester = document.getElementById('temp');
     batchSize = localStorage.getItem('localBS');
-    tester.innerHTML += '<h2>Batch Left:' + batchSize + '</h2>';
+    tester.innerHTML += '<h2>Batch Left: ' + batchSize + '</h2>';
 }
 
 function getTotals(e){
