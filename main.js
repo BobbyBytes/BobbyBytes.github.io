@@ -1,5 +1,4 @@
 document.getElementById('batchInputForm').addEventListener('submit', saveBatch);
-document.getElementById('clear').addEventListener('clear', clearBatch);
 
 function saveBatch(e){
     var batchSize = document.getElementById('batchSizeInput').value;
