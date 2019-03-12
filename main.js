@@ -15,7 +15,8 @@ e.preventDefault();
 
 
 function clearBatch(e){
-    batchSize = x;
+    batchSize = 0;
+    tester.innerHTML = '';
 }
 
 function displayLeft(e){
