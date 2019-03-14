@@ -54,17 +54,20 @@ function makeButtons(bLeft){
     }
 
     var cakes =[tenin, ninein, eightin, sevenin, sixin];
-
+    tester.innerHTML = '<div class="jumbotron">';
     for (i=0; i<5; i++){
         if (bLeft > cakes[i].weight){
             var id = cakes[i].id;
             var weight = cakes[i].weight;
-            tester.innerHTML += '<a href="#" onclick="clearBatch()" class="btn btn-primary">' + id + '</a> '; 
+            tester.innerHTML += '<a href="#" onclick="subtractCake(\''+weight+'\')" class="btn btn-primary">' + id + '</a> '; 
         }
     }
-
+    tester.innerHTML += '</div>';
 }   // end makeButtons function
 
 function subtractCake(cakeWeight){
-    
+    var batch = localStorage.getItem('localBS')
+    batch = batch - cakeWeight;
+    localStorage.setItem('localBS', batch);
+    makeButtons(batch);
 }
