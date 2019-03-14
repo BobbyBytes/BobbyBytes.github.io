@@ -62,7 +62,7 @@ function makeButtons(bLeft){
             tester.innerHTML += '<a href="#" onclick="subtractCake(\''+weight+'\')" class="btn btn-primary">' + id + '</a> '; 
         }
     }
-    tester.innerHTML += '</div>';
+    //tester.innerHTML += '</div>';
 }   // end makeButtons function
 
 function subtractCake(cakeWeight){
