@@ -8,11 +8,10 @@ function saveBatch(e){
     else {
         localStorage.setItem('localBS', batchSize);
     }
-makeBttons(batchSize);
+makeButtons(batchSize);
 displayLeft();
 e.preventDefault();
 }
-
 
 function clearBatch(e){
     var tester = document.getElementById('temp');
@@ -29,11 +28,7 @@ function displayLeft(e){
     '<a href="#" onclick="clearBatch()" class="btn btn-primary">6in</a> ' + '</div>';
 }
 
-function getTotals(e){
-
-}
-
-function makeBttons(bLeft){
+function makeButtons(bLeft){
     var tester = document.getElementById('temp');
     batchSize = localStorage.getItem('localBS');
     var worksize = batchSize;
@@ -60,13 +55,16 @@ function makeBttons(bLeft){
 
     var cakes =[tenin, ninein, eightin, sevenin, sixin];
 
-    for (i=0; i<6; i++){
+    for (i=0; i<5; i++){
         if (bLeft > cakes[i].weight){
             var id = cakes[i].id;
             var weight = cakes[i].weight;
-            tester.innerHTML += '<div class="jumbotron">' + '<h2>Batch Left: ' + batchSize + '</h2>' +
-    '<a href="#" onclick="clearBatch()" class="btn btn-primary">' + id + '</a> ' + '</div>';
+            tester.innerHTML += '<a href="#" onclick="clearBatch()" class="btn btn-primary">' + id + '</a> '; 
         }
     }
 
+}   // end makeButtons function
+
+function subtractCake(cakeWeight){
+    
 }
