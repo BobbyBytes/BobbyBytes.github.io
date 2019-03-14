@@ -15,15 +15,17 @@ e.preventDefault();
 
 function clearBatch(e){
     var tester = document.getElementById('temp');
+    var cakeRemain = document.getElementById('cakesRemaining');
     batchSize = 0;
     tester.innerHTML = '';
+    cakeRemain.innerHTML = '';
     e.preventDefault();
 
 }
 
 function displayLeft(remain){
     var cakeRemain = document.getElementById('cakesRemaining');
-    cakeRemain.innerHTML += '<div class="jumbotron">' + '<h2>Batch Remaining: ' + remain + '</h2>' + '</div>';
+    cakeRemain.innerHTML += '<div class="jumbotron">' + '<h4>Batch Remaining: ' + remain + '</h4>' + '</div>';
 }
 
 function makeButtons(bLeft){
