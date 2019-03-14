@@ -8,8 +8,8 @@ function saveBatch(e){
     else {
         localStorage.setItem('localBS', batchSize);
     }
+displayLeft(batchSize);
 makeButtons(batchSize);
-displayLeft();
 e.preventDefault();
 }
 
@@ -21,11 +21,9 @@ function clearBatch(e){
 
 }
 
-function displayLeft(e){
-    var tester = document.getElementById('temp');
-    batchSize = localStorage.getItem('localBS');
-    tester.innerHTML += '<div class="jumbotron">' + '<h2>Batch Remaining: ' + batchSize + '</h2>' +
-    '<a href="#" onclick="clearBatch()" class="btn btn-primary">6in</a> ' + '</div>';
+function displayLeft(remain){
+    var cakeRemain = document.getElementById('cakesRemaining');
+    cakeRemain.innerHTML += '<div class="jumbotron">' + '<h2>Batch Remaining: ' + remain + '</h2>' + '</div>';
 }
 
 function makeButtons(bLeft){
@@ -70,4 +68,5 @@ function subtractCake(cakeWeight){
     batch = batch - cakeWeight;
     localStorage.setItem('localBS', batch);
     makeButtons(batch);
+    displayLeft(batch);
 }
