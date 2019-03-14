@@ -59,7 +59,7 @@ function makeButtons(bLeft){
         if (bLeft > cakes[i].weight){
             var weight = cakes[i].weight;
             var id = cakes[i].id;
-            tester.innerHTML += '<a href="#" onclick="subAndSum(\''+weight, id+'\')" class="btn btn-primary">' + id + '</a> '; 
+            tester.innerHTML += '<a href="#" onclick="subAndSum(' +weight + ',' + id + ')" class="btn btn-primary">' + id + '</a> '; 
         }
     }
     //tester.innerHTML += '</div>';
