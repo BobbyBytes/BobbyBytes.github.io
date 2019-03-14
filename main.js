@@ -57,7 +57,9 @@ function makeButtons(bLeft){
     //tester.innerHTML += '<div class="jumbotron">';
     for (i=0; i<5; i++){
         if (bLeft > cakes[i].weight){
-            tester.innerHTML += '<a href="#" onclick="subAndSum(\''+cakes[i]+'\')" class="btn btn-primary">' + id + '</a> '; 
+            var weight = cakes[i].weight;
+            var id = cakes[i].id;
+            tester.innerHTML += '<a href="#" onclick="subAndSum(\''+weight, id+'\')" class="btn btn-primary">' + id + '</a> '; 
         }
     }
     //tester.innerHTML += '</div>';
@@ -71,12 +73,12 @@ function subtractCake(cakeWeight){
     displayLeft(batch);
 }
 
-function subAndSum(cakes){
-    subtractCake(cakes.weight);
-    sumCakes(cakes.id);
+function subAndSum(weighty, idy){
+    subtractCake(weighty);
+    sumCakes(idy);
 
 }
 
 function sumCakes(sumMe){
-    
+
 }
