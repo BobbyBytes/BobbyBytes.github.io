@@ -54,7 +54,7 @@ function makeButtons(bLeft){
     }
 
     var cakes =[tenin, ninein, eightin, sevenin, sixin];
-    tester.innerHTML = '<div class="jumbotron">';
+    tester.innerHTML += '<div class="jumbotron">';
     for (i=0; i<5; i++){
         if (bLeft > cakes[i].weight){
             var id = cakes[i].id;
