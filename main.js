@@ -24,7 +24,7 @@ function clearBatch(e){
 function displayLeft(e){
     var tester = document.getElementById('temp');
     batchSize = localStorage.getItem('localBS');
-    tester.innerHTML += '<div class="jumbotron">' + '<h2>Batch Left: ' + batchSize + '</h2>' +
+    tester.innerHTML += '<div class="jumbotron">' + '<h2>Batch Remaining: ' + batchSize + '</h2>' +
     '<a href="#" onclick="clearBatch()" class="btn btn-primary">6in</a> ' + '</div>';
 }
 
