@@ -52,7 +52,7 @@ function makeButtons(bLeft){
         id: 6,
         weight: 5.1
     }
-
+    tester.innerHTML = '';
     var cakes =[tenin, ninein, eightin, sevenin, sixin];
     tester.innerHTML += '<div class="jumbotron">';
     for (i=0; i<5; i++){
