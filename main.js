@@ -8,6 +8,16 @@ function saveBatch(e){
     else {
         localStorage.setItem('localBS', batchSize);
     }
+var sixes = 0;
+var sevens = 0;
+var eights = 0;
+var nines = 0;
+var tens = 0;
+localStorage.setItem('localSixes', sixes);
+localStorage.setItem('localSevens', sevens);
+localStorage.setItem('localEights', eights);
+localStorage.setItem('localNines', nines);
+localStorage.setItem('localTens', tens);
 displayLeft(batchSize);
 makeButtons(batchSize);
 e.preventDefault();
@@ -25,13 +35,17 @@ function clearBatch(e){
 
 function displayLeft(remain){
     var cakeRemain = document.getElementById('cakesRemaining');
-    cakeRemain.innerHTML += '<div class="jumbotron">' + '<h4>Batch Remaining: ' + remain + '</h4>' + '</div>';
+    var mySixes = localStorage.getItem('localSixes');
+    var mySevens = localStorage.getItem('localSevens');
+    var myEights = localStorage.getItem('localEights');
+    var myNines = localStorage.getItem('localNines');
+    var myTens = localStorage.getItem('localTens');
+    cakeRemain.innerHTML = '<div class="jumbotron">' + ' 6in: ' + mySixes +'<br>'+ ' 7in: ' + mySevens + '<br>' +' 8in: ' + myEights + '<br>' + '9in: '+ myNines + '<br>' + '10in: ' + myTens + '<h4>Batch Remaining: ' + remain + '</h4>' + '</div>';
 }
 
 function makeButtons(bLeft){
     var tester = document.getElementById('temp');
     batchSize = localStorage.getItem('localBS');
-    var worksize = batchSize;
     var tenin = {
         id: 10,
         weight: 29.5
@@ -64,21 +78,53 @@ function makeButtons(bLeft){
     }
     //tester.innerHTML += '</div>';
 }   // end makeButtons function
+function subAndSum(weighty, idy){
+    subtractCake(weighty);
+    sumCakes(idy);
+}
 
 function subtractCake(cakeWeight){
     var batch = localStorage.getItem('localBS')
     batch = batch - cakeWeight;
     localStorage.setItem('localBS', batch);
+
+}
+
+function sumCakes(sumME){
+    var batch = localStorage.getItem('localBS');
+    
+    
+        if(sumME == 6){
+            var mySixes = localStorage.getItem('localSixes');
+            mySixes ++;
+            localStorage.setItem('localSixes', mySixes);
+        }
+        if(sumME == 7){
+            var mySevens = localStorage.getItem('localSevens');
+            mySevens++;
+            localStorage.setItem('localSevens', mySevens);
+        }
+        if(sumME == 8){
+            var myEights = localStorage.getItem('localEights');
+            myEights++;
+            localStorage.setItem('localEights', myEights);
+        }
+        if(sumME == 9){
+            var myNines = localStorage.getItem('localNines');
+            myNines++;
+            localStorage.setItem('localNines', myNines);
+        }
+        if(sumME == 10){
+            var myTens = localStorage.getItem('localTens');
+            myTens++;
+            localStorage.setItem('localTens', myTens);
+        }
+ 
+       
     makeButtons(batch);
     displayLeft(batch);
 }
 
-function subAndSum(weighty, idy){
-    subtractCake(weighty);
-    sumCakes(idy);
-
-}
-
-function sumCakes(sumMe){
+function sumThemUp(a,b,c,d,e,f){
 
 }
