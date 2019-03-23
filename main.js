@@ -1,7 +1,8 @@
 document.getElementById('batchInputForm').addEventListener('submit', saveBatch);
 
 function saveBatch(e){
-    var batchSize = document.getElementById('batchSizeInput').value;
+    var goldCakeModifier = 27.6;
+    var batchSize = (document.getElementById('batchSizeInput').value) * goldCakeModifier;
     if (localStorage.getItem('localBS') == null){
         localStorage.setItem('localBS', batchSize);
     }
@@ -34,13 +35,16 @@ function clearBatch(e){
 }
 
 function displayLeft(remain){
+    var lbsRemaining = (remain/16);
     var cakeRemain = document.getElementById('cakesRemaining');
     var mySixes = localStorage.getItem('localSixes');
     var mySevens = localStorage.getItem('localSevens');
     var myEights = localStorage.getItem('localEights');
     var myNines = localStorage.getItem('localNines');
     var myTens = localStorage.getItem('localTens');
-    cakeRemain.innerHTML = '<div class="jumbotron">' + ' 6in: ' + mySixes +'<br>'+ ' 7in: ' + mySevens + '<br>' +' 8in: ' + myEights + '<br>' + '9in: '+ myNines + '<br>' + '10in: ' + myTens + '<h4>Batch Remaining: ' + remain + '</h4>' + '</div>';
+    cakeRemain.innerHTML = '<div class="jumbotron">' + ' 6in: ' + mySixes +'<br>'+ ' 7in: ' + mySevens + '<br>' +' 8in: ' + 
+    myEights + '<br>' + '9in: '+ myNines + '<br>' + '10in: ' + myTens + '<h4>Batch Remaining: ' + remain + 'oz.' + 'or ' + lbsRemaining + 'lbs.' +
+    '</h4>' + '</div>';
 }
 
 function makeButtons(bLeft){
@@ -48,23 +52,23 @@ function makeButtons(bLeft){
     batchSize = localStorage.getItem('localBS');
     var tenin = {
         id: 10,
-        weight: 29.5
+        weight: 35
     }
     var ninein = {
         id: 9,
-        weight: 19.5
+        weight: 28
     }
     var eightin = {
         id: 8,
-        weight: 11.6
+        weight: 22
     }
     var sevenin = {
         id: 7,
-        weight: 10.0
+        weight: 14
     }
     var sixin = {
         id: 6,
-        weight: 5.1
+        weight: 12
     }
     tester.innerHTML = '';
     var cakes =[tenin, ninein, eightin, sevenin, sixin];
