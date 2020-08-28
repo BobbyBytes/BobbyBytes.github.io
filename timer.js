@@ -29,7 +29,7 @@ function startHeatUpTimer(e) {
         if (distance < 0) {
             clearInterval(x);
             document.getElementById("spaceForTimer").innerHTML = "Begin Cool Down" + distance;
-            beep();
+            //beep();
             startCoolDownTimer();
         }
     }, 100);
