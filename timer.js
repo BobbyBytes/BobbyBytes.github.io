@@ -7,7 +7,7 @@ function startTimer(e) {
         var now = new Date().getTime();
         var timeToReach = now + countDownTime
         // Find the distance between now and the count down date
-        var distance = countDownTime - timeToReach;
+        var distance = timeToReach - countDownTime;
 
         // Time calculations for days, hours, minutes and seconds
         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
