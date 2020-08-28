@@ -2,13 +2,12 @@ document.getElementById('batchInputForm').addEventListener('submit', startTimer)
 
 function startTimer() {
     var x = setInterval(function () {
-
-        var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+        var countDownTime = (document.getElementById('heatUpTimeInput').value) * 1000;
         // Get today's date and time
         var now = new Date().getTime();
-
+        var timeToReach = now + countDownTime
         // Find the distance between now and the count down date
-        var distance = countDownDate - now;
+        var distance = countDownTime - timeToReach;
 
         // Time calculations for days, hours, minutes and seconds
         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -23,7 +22,7 @@ function startTimer() {
         // If the count down is finished, write some text
         if (distance < 0) {
             clearInterval(x);
-            document.getElementById("demo").innerHTML = "EXPIRED";
+            document.getElementById("spaceForTimer").innerHTML = "Begin Cool Down";
         }
     }, 1000);
 }
