@@ -26,13 +26,14 @@ function startHeatUpTimer(e) {
         document.getElementById("spaceForTimer").innerHTML = minutes + "m " + seconds + "s ";
 
         // If the count down is finished, write some text
-        if (distance < 0) {           
-            clearInterval(x);            
+        if (distance < 0) {
+            document.getElementById("spaceForTimer").innerHTML = "Begin Cool Down" + distance;
+            beep();
+            clearInterval(x);   
+            startCoolDownTimer();         
         }
     }, 100);
-    document.getElementById("spaceForTimer").innerHTML = "Begin Cool Down" + distance;  
-    beep();
-    startCoolDownTimer();
+
     e.preventDefault();
 }
 function clearTimer(e) {
