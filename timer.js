@@ -8,8 +8,8 @@ function startHeatUpTimer(e) {
     var timeToReach = nowOutside + countDownTime
     var x = setInterval(function () {
         if (cancelSignalActive) {
-            clearInterval(x);
             cancelSignalActive = false;
+            clearInterval(x);
             return;
         }
         // Get today's date and time
@@ -26,13 +26,13 @@ function startHeatUpTimer(e) {
         document.getElementById("spaceForTimer").innerHTML = minutes + "m " + seconds + "s ";
 
         // If the count down is finished, write some text
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("spaceForTimer").innerHTML = "Begin Cool Down" + distance;
-            beep();
-            startCoolDownTimer();
+        if (distance < 0) {           
+            clearInterval(x);            
         }
     }, 100);
+    document.getElementById("spaceForTimer").innerHTML = "Begin Cool Down" + distance;  
+    beep();
+    startCoolDownTimer();
     e.preventDefault();
 }
 function clearTimer(e) {
