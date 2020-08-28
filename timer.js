@@ -3,13 +3,14 @@ document.getElementById('SetTimesForm').addEventListener('reset', clearTimer);
 
 function startTimer(e) {
     var countDownTime = (document.getElementById('heatUpTimeInput').value) * 1000;
+    var nowOutside = new Date().getTime();
+    var timeToReach = nowOutside + countDownTime
     var x = setInterval(function () {
 
         // Get today's date and time
-        var now = new Date().getTime();
-        var timeToReach = now + countDownTime
+        var nowInside = new Date().getTime();
         // Find the distance between now and the count down date
-        var distance = timeToReach - now;
+        var distance = timeToReach - nowInside;
 
         // Time calculations for days, hours, minutes and seconds
 
