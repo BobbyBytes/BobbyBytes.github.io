@@ -1,4 +1,4 @@
-document.getElementById('batchInputForm').addEventListener('submit', startTimer);
+document.getElementById('SetTimesForm').addEventListener('submit', startTimer);
 
 function startTimer() {
     var x = setInterval(function () {
