@@ -71,11 +71,12 @@ function startCoolDownTimer() {
 
         // If the count down is finished, write some text
         if (distance < 0) {
-            clearInterval(x);
+
             document.getElementById("spaceForTimer").innerHTML = "Time's Up Partner ;)" + distance;
             beep();
             setTimeout(function () {
                 beep();
+                clearInterval(x);
             }, 500);
         }
     }, 100);
