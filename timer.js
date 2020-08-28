@@ -82,5 +82,5 @@ function startTimerCycle(e) {
     setTimeout(function () {
         beep();
     }, 500);
-    e.preventDefault
+    e.preventDefault();
 }
