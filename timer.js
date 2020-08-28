@@ -1,4 +1,4 @@
-document.getElementById('SetTimesForm').addEventListener('submit', startHeatUpTimer);
+document.getElementById('SetTimesForm').addEventListener('submit', startTimerCycle);
 document.getElementById('SetTimesForm').addEventListener('reset', clearTimer);
 
 var cancelSignalActive = false;
@@ -29,8 +29,8 @@ function startHeatUpTimer(e) {
         if (distance < 0) {
             clearInterval(x);   
             document.getElementById("spaceForTimer").innerHTML = "Begin Cool Down" + distance;
-            beep();
-            startCoolDownTimer();         
+            //beep();
+            //startCoolDownTimer();         
         }
     }, 100);
 
@@ -81,4 +81,11 @@ function startCoolDownTimer() {
             }, 500);
         }
     }, 100);
+}
+function startTimerCycle() {
+
+    startHeatUpTimer();
+    beep();
+    startCoolDownTimer();
+
 }
