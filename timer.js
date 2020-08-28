@@ -27,11 +27,10 @@ function startHeatUpTimer(e) {
 
         // If the count down is finished, write some text
         if (distance < 0) {
- 
+            clearInterval(x); 
             document.getElementById("spaceForTimer").innerHTML = "Begin Cool Down";
             beep();
-            startCoolDownTimer();
-            clearInterval(x);           
+            startCoolDownTimer();          
         }
     }, 100);
     e.preventDefault();
@@ -71,7 +70,7 @@ function startCoolDownTimer() {
 
         // If the count down is finished, write some text
         if (distance < 0) {
-            document.getElementById("spaceForTimer").innerHTML = "Time's Up Partner ;)" + distance;
+            document.getElementById("spaceForTimer").innerHTML = "Time's Up Partner ;)";
             clearInterval(x);
             beep();
             setTimeout(function () {
