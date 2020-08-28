@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8"></meta>
@@ -9,11 +9,27 @@
         <div class="container">
             <h1> Bobby's Web Apps <small>by: Robert Liani</small></h1>
                 <div class="jumbotron">
+                    <h3>Gold Cake Prepper (in development)</h3>
+                    <form id="batchInputForm">
+                        <div class="form_group">
+                            <label for="batchSizeInput">Batch Size</label>
+                            <select id="batchSizeInput" class="form-control">
+                                    <option value="10">10lb</option>
+                                    <option value="20">20lb</option>
+                                    <option value='30'>30lb</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Select</button>
+                        <a href ="#" onclick="clearBatch()" class="btn btn-warning">Clear</a>
+                    </form>
+                </div>    
+                <div id="temp">
                 </div>
-
-
+                <div id="cakesRemaining">
+                </div>
+                <div id ="myTest">
+                </div>
         </div>
-                
         
         <script src="main.js"></script>
         <script src="https://chancejs.com/chance.min.js"></script>
