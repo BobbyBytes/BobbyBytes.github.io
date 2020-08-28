@@ -1,6 +1,7 @@
 document.getElementById('SetTimesForm').addEventListener('submit', startTimer);
 document.getElementById('SetTimesForm').addEventListener('reset', clearTimer);
 
+var cancelSignalActive = false;
 function startTimer(e) {
     var countDownTime = (document.getElementById('heatUpTimeInput').value) * 1000;
     var nowOutside = new Date().getTime();
@@ -16,7 +17,11 @@ function startTimer(e) {
 
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
+        if (cancelSignalActive) {
+            clearInterval(x);
+            cancelSignalActive = false;
+            return;
+        }
         // Display the result in the element with id="demo"
         document.getElementById("spaceForTimer").innerHTML = minutes + "m " + seconds + "s ";
 
@@ -30,6 +35,7 @@ function startTimer(e) {
 }
 function clearTimer(e) {
     document.getElementById("spaceForTimer").innerHTML = " ";
+    cancelSignalActive = true
     e.preventDefault();
 }
 
