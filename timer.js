@@ -2,8 +2,9 @@ document.getElementById('SetTimesForm').addEventListener('submit', startTimer);
 document.getElementById('SetTimesForm').addEventListener('reset', clearTimer);
 
 function startTimer(e) {
+    var countDownTime = (document.getElementById('heatUpTimeInput').value) * 1000;
     var x = setInterval(function () {
-        var countDownTime = (document.getElementById('heatUpTimeInput').value) * 1000;
+
         // Get today's date and time
         var now = new Date().getTime();
         var timeToReach = now + countDownTime
