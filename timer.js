@@ -1,4 +1,5 @@
 document.getElementById('SetTimesForm').addEventListener('submit', startTimer);
+document.getElementById('SetTimesForm').addEventListener('reset', clearTimer);
 
 function startTimer(e) {
     var x = setInterval(function () {
@@ -25,6 +26,10 @@ function startTimer(e) {
             document.getElementById("spaceForTimer").innerHTML = "Begin Cool Down";
         }
     }, 1000);
+    e.preventDefault();
+}
+function clearTimer(e) {
+    document.getElementById("spaceForTimer").innerHTML = "";
     e.preventDefault();
 }
 
