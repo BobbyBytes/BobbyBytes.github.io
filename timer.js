@@ -7,7 +7,11 @@ function startTimer(e) {
     var nowOutside = new Date().getTime();
     var timeToReach = nowOutside + countDownTime
     var x = setInterval(function () {
-
+        if (cancelSignalActive) {
+            clearInterval(x);
+            cancelSignalActive = false;
+            return;
+        }
         // Get today's date and time
         var nowInside = new Date().getTime();
         // Find the distance between now and the count down date
@@ -17,11 +21,7 @@ function startTimer(e) {
 
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        if (cancelSignalActive) {
-            clearInterval(x);
-            cancelSignalActive = false;
-            return;
-        }
+
         // Display the result in the element with id="demo"
         document.getElementById("spaceForTimer").innerHTML = minutes + "m " + seconds + "s ";
 
@@ -30,7 +30,7 @@ function startTimer(e) {
             clearInterval(x);
             document.getElementById("spaceForTimer").innerHTML = "Begin Cool Down" + distance;
         }
-    }, 1000);
+    }, 100);
     e.preventDefault();
 }
 function clearTimer(e) {
