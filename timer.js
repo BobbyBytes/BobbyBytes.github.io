@@ -1,6 +1,6 @@
 document.getElementById('SetTimesForm').addEventListener('submit', startTimer);
 
-function startTimer() {
+function startTimer(e) {
     var x = setInterval(function () {
         var countDownTime = (document.getElementById('heatUpTimeInput').value) * 1000;
         // Get today's date and time
@@ -25,5 +25,6 @@ function startTimer() {
             document.getElementById("spaceForTimer").innerHTML = "Begin Cool Down";
         }
     }, 1000);
+    e.preventDefault();
 }
 
