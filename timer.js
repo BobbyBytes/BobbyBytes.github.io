@@ -77,7 +77,6 @@ function startCoolDownTimer() {
     }, 100);
 }
 function startTimerCycle() {
-
     startHeatUpTimer();
     beep();
     startCoolDownTimer();
