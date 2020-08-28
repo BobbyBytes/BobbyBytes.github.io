@@ -30,6 +30,7 @@ function startHeatUpTimer(e) {
             clearInterval(x);
             document.getElementById("spaceForTimer").innerHTML = "Begin Cool Down" + distance;
             beep();
+            startCoolDownTimer();
         }
     }, 100);
     e.preventDefault();
@@ -45,7 +46,7 @@ function beep() {
     snd.play();
 }
 
-function startCoolDownTimer(e) {
+function startCoolDownTimer() {
     var countDownTime = (document.getElementById('CoolDownTimeInput').value) * 1000;
     var nowOutside = new Date().getTime();
     var timeToReach = nowOutside + countDownTime
@@ -75,7 +76,7 @@ function startCoolDownTimer(e) {
             beep();
             setTimeout(function () {
                 beep();
-            }, 500);            
+            }, 500);
         }
     }, 100);
-    e.preventDefault();
+}
