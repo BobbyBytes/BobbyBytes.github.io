@@ -6,27 +6,35 @@
     <title>Bobbys Web Apps (In Progress)</title>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="timerStyles.css">
-    <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autoplay="false" ></audio>
 </head>
 <body>
+   
+
     <div id="app-container">
-        <h1> Bobby's Web Apps <small>by: Robert Liani</small></h1>
-        <div class="jumbotron">
+      
+        <h1> Bobby's Web Apps <small>by: Robert Liani</small></h1>                
+        <div class="jumbotron" id="jumbo">
             <h3>Basic Countdown Timer</h3>
             <form id="SetTimesForm">
                 <div class="form_group">
-                    <label for="heatUpTimeInput">Set Heat Up Time</label>
-                    <input id="heatUpTimeInput" class="form-control" />
-                    <label for="CoolDownTimeInput">Set Cool Down Time</label>
-                    <input id="CoolDownTimeInput" class="form-control" />
+                    <label for="heatUpTimeInput" >Set Heat Up Time</label>
+                    <input id="heatUpTimeInput" value="40" class="form-control" />
+                    <label for="CoolDownTimeInput" >Set Cool Down Time</label>
+                    <input id="CoolDownTimeInput" value="70" class="form-control" />
                 </div>
-                <button type="submit" class="btn btn-primary" onclick="generateAudio()">Start Countdowns</button>
-                <button type="reset" class="btn btn-warning">Clear</button>
+                <div id="buttons-div">
+                    <button type="submit" class="btn btn-primary">Start Countdowns</button>
+                    <button type="reset" class="btn btn-warning">Clear</button>
+                </div>                
             </form>
-            <div id="spaceForTimer">                
+            <div id="spaceForTimer">
+                Placeholder Text                
             </div>
+            <div id="canvas_container">
+                <canvas id="canvas"></canvas> 
+            </div>            
             <div id="version_display">
-                Version 0.19.0                
+                Version 0.20.0                
             </div>
         </div>
     </div>

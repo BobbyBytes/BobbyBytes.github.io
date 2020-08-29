@@ -3,9 +3,8 @@ document.getElementById('SetTimesForm').addEventListener('reset', clearTimer);
 
 
 var cancelSignalActive = false;
-
+doSomeGradient();
 function startHeatUpTimer(e) {
-    sound = new Audio();
     var countDownTime = (document.getElementById('heatUpTimeInput').value) * 1000;
     var nowOutside = new Date().getTime();
     var timeToReach = nowOutside + countDownTime
@@ -32,6 +31,7 @@ function startHeatUpTimer(e) {
         if (distance < 0) {
             clearInterval(x); 
             document.getElementById("spaceForTimer").innerHTML = "Begin Cool Down";
+            document.getElementById("jumbo").style.background = 'red';
             startCoolDownTimer();          
         }
     }, 100);
@@ -72,7 +72,32 @@ function startCoolDownTimer() {
 }
 
 function clearTimer(e) {
-    document.getElementById("spaceForTimer").innerHTML = " ";
+    document.getElementById("spaceForTimer").innerHTML = "Ready..";
     cancelSignalActive = true
+    document.getElementById("jumbo").style.background = "#e9ecef";
     e.preventDefault();
 }
+
+function doSomeGradient(){
+    var canvas = document.getElementById("canvas");  
+
+    if (canvas.getContext)   
+        {  
+        fitToContainer(canvas);
+        // var ctx = canvas.getContext("2d");         
+        // var gradient = ctx.createLinearGradient(10, 90, 00, 90);
+        // gradient.addColorStop(0, 'black');
+        // gradient.addColorStop(1, 'white');
+        // ctx.fillStyle = gradient;
+        // ctx.fillRect(10, 10, 200, 250);             
+         }
+}
+function fitToContainer(canvas){
+    // Make it visually fill the positioned parent    
+    canvas.style.width ='100%';
+    canvas.style.height='30px';
+    // ...then set the internal size to match
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    canvas.style.background = 'grey';
+  }
