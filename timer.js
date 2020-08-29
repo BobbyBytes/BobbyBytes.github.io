@@ -26,7 +26,7 @@ function startHeatUpTimer(e) {
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        var totalSecondsLeft = minutes * 60 + seconds
+        var totalSecondsLeft = distance / 1000;
         var percentageDone = 1 - (totalSecondsLeft / (countDownTime /1000))
         doHeatUpGradient(canvas, percentageDone); 
         //alert("seconds left" + totalSecondsLeft + "count dow time" + countDownTime +"percent"+ percentageDone);
@@ -72,7 +72,7 @@ function startCoolDownTimer() {
 
         // Display the result in the element with id="demo"
         document.getElementById("spaceForTimer").innerHTML = "Cooling Down.. " + minutes + "m " + seconds + "s ";
-        var totalSecondsLeft = minutes * 60 + seconds
+        var totalSecondsLeft = distance / 1000;
         var percentageDone = 1 - (totalSecondsLeft / (countDownTime /1000))
         doCoolDownGradient(canvas, percentageDone); 
         // If the count down is finished, write some text
