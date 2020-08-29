@@ -5,6 +5,7 @@ var sound = new Audio();
 
 
 function playSound() {
+    sound.src = "http://www.soundjay.com/button/beep-07.wav"
     sound.play();
 }
 
@@ -85,7 +86,7 @@ function startCoolDownTimer() {
         if (distance < 0) {
             document.getElementById("spaceForTimer").innerHTML = "Time's Up Partner ;)";
             clearInterval(x);
-            beep();
+            playSound();
             setTimeout(function () {
                 playSound();
             }, 500);
