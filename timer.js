@@ -3,15 +3,22 @@ document.getElementById('SetTimesForm').addEventListener('reset', clearTimer);
 
 var canvas = document.getElementById("canvas");  
 var cancelSignalActive = false;
+//Fit canvas to container
 fitToContainer(canvas);
+//Make sure gradient is empty
 doHeatUpGradient(canvas, 0);
+
+
 function startHeatUpTimer(e) {
+    document.getElementById("startButton").disabled = true;
     var countDownTime = (document.getElementById('heatUpTimeInput').value) * 1000;
     var nowOutside = new Date().getTime();
     var timeToReach = nowOutside + countDownTime
+    cancelSignalActive = false;
     var x = setInterval(function () {
         if (cancelSignalActive) {
             cancelSignalActive = false;
+            document.getElementById("startButton").disabled = false;
             clearInterval(x);
             return;
         }
@@ -43,6 +50,7 @@ function startHeatUpTimer(e) {
         }
     }, 100);
     e.preventDefault();
+
 }
 
 function startCoolDownTimer() {
@@ -95,16 +103,19 @@ function startCoolDownTimer() {
                     }, 1000);
                 }, 1000);
             }, 1000);
-
+            runningCountdown = false;
+            document.getElementById("startButton").disabled = false;
         }
     }, 100);
 }
 
 function clearTimer(e) {  
     document.getElementById("spaceForTimer").innerHTML = "Ready..";
-    cancelSignalActive = true
+    cancelSignalActive = true;
+    runningCountdown = false;
     document.getElementById("jumbo").style.background = "#e9ecef";
     clearMyCanvas(canvas);
+    document.getElementById("startButton").disabled = false;
     e.preventDefault();
 }
 
