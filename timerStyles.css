@@ -93,3 +93,13 @@ body {
   /* center content inside the block */
   text-align: center;
 }
+#spaceForTimer {
+    text-align: center;
+    font-size: xx-large;
+}
+
+#version_display{
+    text-align: right;
+    vertical-align: text-bottom;
+    font-size: small;
+}
